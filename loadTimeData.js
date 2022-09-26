@@ -1,5 +1,8 @@
 const options = {
   iconClass: "icon-offline",
+  enableAltGameMode: true,
+  altGameCommonImage2x: "images/default_200_percent/offline/200-offline-sprite.png",
+  altGameSpecificImage2x: "images/default_200_percent/offline/200-offline-sprite.png",
 };
 
 export const loadTimeData = {
