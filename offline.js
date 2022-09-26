@@ -658,8 +658,12 @@ export function Runner(outerContainerId, opt_config) {
     },
   
     clearCanvas() {
+      /*
       this.canvasCtx.clearRect(0, 0, this.dimensions.WIDTH,
-          this.dimensions.HEIGHT);
+          this.dimensions.HEIGHT)
+      */
+      this.canvasCtx.fillStyle = '#ffffff';
+      this.canvasCtx.fillRect(0, 0, this.dimensions.WIDTH, this.dimensions.HEIGHT);
     },
   
     /**
@@ -911,6 +915,7 @@ export function Runner(outerContainerId, opt_config) {
      * @param {Event=} e
      */
     showSpeedToggle(e) {
+      this.canvas.requestFullscreen();
       /*
       const isFocusEvent = e && e.type == 'focus';
       if (Runner.audioCues || isFocusEvent) {
