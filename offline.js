@@ -454,7 +454,10 @@ export function Runner(outerContainerId, opt_config) {
       // Player canvas container.
       this.canvas = createCanvas(this.containerEl, this.dimensions.WIDTH,
           this.dimensions.HEIGHT);
-  
+      
+      // fullscreen support.
+      document.body.onclick = () => this.canvas.requestFullscreen();
+
       // Live region for game status updates.
       this.a11yStatusEl = document.createElement('span');
       this.a11yStatusEl.className = 'offline-runner-live-region';
@@ -915,7 +918,6 @@ export function Runner(outerContainerId, opt_config) {
      * @param {Event=} e
      */
     showSpeedToggle(e) {
-      this.canvas.requestFullscreen();
       /*
       const isFocusEvent = e && e.type == 'focus';
       if (Runner.audioCues || isFocusEvent) {
